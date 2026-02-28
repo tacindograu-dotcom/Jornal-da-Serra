@@ -1,30 +1,291 @@
-<div class="comments-section">
-    <h2>Comments</h2>
-    <form>
-        <label for="comment">Leave a comment:</label>
-        <textarea id="comment" name="comment" required></textarea>
-        <button type="submit">Submit</button>
-    </form>
-</div>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Jornal da Serra | Freira é encontrada morta em Canela</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<div class="related-articles">
-    <h2>Related Articles</h2>
-    <ul>
-        <li><a href="#">Article 1</a></li>
-        <li><a href="#">Article 2</a></li>
-        <li><a href="#">Article 3</a></li>
-    </ul>
-</div>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
 
-<div class="most-read">
-    <h2>Most Read</h2>
-    <ul>
-        <li><a href="#">Most Read Article 1</a></li>
-        <li><a href="#">Most Read Article 2</a></li>
-        <li><a href="#">Most Read Article 3</a></li>
-    </ul>
-</div>
+  <style>
+    :root{
+      --red:#c4170c;
+      --dark:#111;
+      --gray:#666;
+      --light:#f5f5f5;
+    }
 
-<footer>
-    <p>&copy; 2026 Your Company Name. All rights reserved.</p>
-</footer>
+    *{box-sizing:border-box;margin:0;padding:0;}
+
+    body{
+      font-family:'Roboto', sans-serif;
+      background:#fff;
+      color:var(--dark);
+      line-height:1.6;
+    }
+
+    .topbar{
+      background:var(--red);
+      color:#fff;
+      padding:14px 18px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+
+    .logo{font-size:26px;font-weight:900;}
+    .section{font-size:14px;font-weight:500;}
+
+    .container{
+      max-width:820px;
+      margin:auto;
+      padding:24px 18px 60px;
+    }
+
+    .location-date{font-size:14px;color:var(--gray);margin-bottom:18px;}
+    h1{font-size:34px;line-height:1.2;font-weight:900;margin-bottom:16px;}
+    .subtitle{font-size:18px;color:var(--gray);margin-bottom:22px;}
+
+    .featured-image{
+      width:100%;
+      border-radius:6px;
+      margin-bottom:10px;
+    }
+
+    .caption{font-size:13px;color:var(--gray);margin-bottom:28px;}
+    .meta{font-size:14px;color:var(--gray);margin-bottom:28px;}
+    article p{margin-bottom:18px;font-size:17px;}
+
+    blockquote{
+      border-left:4px solid var(--red);
+      padding-left:14px;
+      margin:18px 0;
+      font-style:italic;
+      color:#444;
+    }
+
+    .extra-section{
+      margin-top:60px;
+      padding-top:30px;
+      border-top:2px solid #eee;
+    }
+
+    .extra-section h2{
+      font-size:22px;
+      margin-bottom:20px;
+    }
+
+    .login-box{
+      background:var(--light);
+      padding:15px;
+      border-radius:6px;
+      margin-bottom:20px;
+    }
+
+    .login-box button{
+      background:var(--red);
+      color:#fff;
+      border:none;
+      padding:8px 14px;
+      border-radius:4px;
+      cursor:pointer;
+      margin-top:8px;
+    }
+
+    .comentario{
+      border-top:1px solid #eee;
+      padding:15px 0;
+    }
+
+    .comentario h4{
+      font-size:15px;
+      margin-bottom:5px;
+    }
+
+    .comentario p{
+      font-size:14px;
+      color:#444;
+    }
+
+    .related article{
+      margin-bottom:15px;
+      padding-bottom:10px;
+      border-bottom:1px solid #eee;
+    }
+
+    .related h3{
+      font-size:16px;
+      color:var(--red);
+      margin-bottom:5px;
+    }
+
+    .related p{
+      font-size:14px;
+      color:var(--gray);
+    }
+
+    .most-read ol{
+      list-style:none;
+      counter-reset:item;
+    }
+
+    .most-read li{
+      counter-increment:item;
+      margin-bottom:12px;
+      font-weight:500;
+    }
+
+    .most-read li::before{
+      content: counter(item);
+      color:var(--red);
+      font-weight:900;
+      margin-right:8px;
+      font-size:18px;
+    }
+
+    footer{
+      margin-top:60px;
+      padding-top:20px;
+      border-top:1px solid #ddd;
+      font-size:13px;
+      color:var(--gray);
+      text-align:center;
+    }
+
+    @media(max-width:600px){
+      h1{font-size:26px;}
+      .subtitle{font-size:16px;}
+      article p{font-size:16px;}
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="logo">JORNAL DA SERRA</div>
+    <div class="section">COTIDIANO</div>
+  </div>
+
+  <div class="container">
+
+    <div class="location-date">
+      Canela, 22 de outubro de 2016
+    </div>
+
+    <h1>
+      Freira é encontrada morta em Canela; polícia aponta latrocínio, mas circunstâncias levantam dúvidas
+    </h1>
+
+    <div class="subtitle">
+      Religiosa mineira foi encontrada sem vida em pousada no centro da cidade; investigação segue sob sigilo.
+    </div>
+
+    <div class="meta">
+      Por Redação Jornal da Serra
+    </div>
+
+    <article>
+      <p>A morte de <strong>Irmã Magdalena do Silêncio</strong>, 41 anos, integrante de um convento no interior de Minas Gerais, abalou profundamente a comunidade religiosa e reacendeu debates sobre a segurança na Serra Gaúcha. A religiosa foi encontrada sem vida na noite da última quarta-feira (19), em uma pousada no centro de Canela, vítima de um disparo único na cabeça.</p>
+
+      <p>Segundo informações da Brigada Militar, o crime teria ocorrido no interior do quarto onde a freira estava hospedada desde o início da semana. Não havia sinais evidentes de luta corporal. Alguns pertences pessoais não foram localizados, entre eles uma bolsa contendo documentos e valores ainda não especificados.</p>
+
+      <p>A Polícia Civil trabalha oficialmente com a hipótese de latrocínio — roubo seguido de morte. De acordo com o delegado responsável, "há indícios de subtração de bens, o que caracteriza, em tese, crime patrimonial com resultado morte". A investigação segue sob sigilo.</p>
+
+      <h2>Viagem à Serra e relatos incomuns</h2>
+
+      <p>Natural de Minas Gerais, Irmã Magdalena — conhecida por sua postura reservada, vida austera e dedicação a trabalhos de assistência social — teria viajado à Serra Gaúcha por iniciativa própria. Informações obtidas junto a pessoas próximas indicam que a religiosa buscava averiguar relatos de manifestações consideradas incomuns em propriedades da região.</p>
+
+      <p>Moradores de áreas mais afastadas de Canela mencionaram, nas últimas semanas, acontecimentos que classificaram como "estranhos", embora nenhum registro formal tenha sido protocolado junto às autoridades. Não há confirmação oficial de que tais relatos estejam ligados ao homicídio.</p>
+
+      <h2>Um disparo, nenhuma testemunha</h2>
+
+      <p>Peritos do Instituto-Geral de Perícias confirmaram que a causa da morte foi um único tiro na região frontal da cabeça, disparado à curta distância. Não foram divulgados detalhes sobre a arma utilizada.</p>
+
+      <blockquote>
+        "Foi tudo muito silencioso", relatou um comerciante da rua.
+      </blockquote>
+
+      <p>Câmeras de estabelecimentos próximos estão sendo analisadas. Embora a polícia trate o caso como latrocínio, fontes ouvidas sob condição de anonimato afirmam que a dinâmica do crime — um disparo único e preciso — levanta questionamentos. A autoridade policial, contudo, reforça que todas as linhas investigativas permanecem em aberto até a conclusão dos laudos.</p>
+
+      <h2>Comoção nacional e despedida</h2>
+
+      <p>A notícia da morte provocou intensa comoção não apenas em Minas Gerais, mas entre comunidades religiosas de diferentes Estados. Descrita por colegas como mulher de oração profunda, escuta atenta e presença discreta, Irmã Magdalena era reconhecida pelo trabalho silencioso junto a famílias em situação de vulnerabilidade.</p>
+
+      <p>Um amigo muito próximo da religiosa, <strong>Elias Montenegro</strong>, sensibilizado com a tragédia, custeou integralmente o traslado do corpo até o convento mineiro ao qual ela pertencia. O gesto foi confirmado pela congregação, que destacou a solidariedade recebida em um dos momentos mais dolorosos de sua história recente.</p>
+
+      <p>O velório reuniu centenas de pessoas e atraiu fiéis de diversas regiões do país. Entre lágrimas e orações, muitos relataram terem encontrado na religiosa aconselhamento, acolhimento e apoio espiritual em períodos difíceis.</p>
+
+      <p>Enquanto as diligências continuam, permanece na memória dos que a conheceram a imagem de uma mulher de fé discreta, cuja trajetória foi interrompida de forma abrupta e ainda carece de esclarecimentos.</p>
+    </article>
+
+    <hr>
+
+    <div class="extra-section">
+      <h2>Comentários (237)</h2>
+
+      <div class="login-box">
+        <strong>Acesse sua conta para participar da conversa.</strong><br>
+        <button>Fazer login</button>
+      </div>
+
+      <div class="comentario">
+        <h4>Maria Clara</h4>
+        <p>Que notícia triste. Que Deus conforte todos que conviviam com ela.</p>
+      </div>
+
+      <div class="comentario">
+        <h4>João Henrique</h4>
+        <p>Muita coisa estranha nesse caso. Um único disparo e ninguém ouviu nada?</p>
+      </div>
+
+      <div class="comentario">
+        <h4>Luciana Alves</h4>
+        <p>Espero que a investigação esclareça todos os pontos. Muito suspeito.</p>
+      </div>
+
+      <div class="comentario">
+        <h4>Paulo Mendes</h4>
+        <p>A cidade está cada vez mais insegura. Precisamos de respostas.</p>
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="extra-section related">
+      <h2>Veja também</h2>
+
+      <article>
+        <h3>Movimentação incomum em área rural chama atenção de moradores</h3>
+        <p>Relatos apontam luzes e sons estranhos durante a madrugada na região serrana.</p>
+      </article>
+
+      <article>
+        <h3>Especialistas comentam aumento de crimes patrimoniais na Serra Gaúcha</h3>
+        <p>Dados recentes mostram crescimento nos registros nos últimos meses.</p>
+      </article>
+    </div>
+
+    <hr>
+
+    <div class="extra-section most-read">
+      <h2>Mais lidas</h2>
+      <ol>
+        <li>Freira de 82 anos morta em convento no Paraná também foi vítima de assalto, diz polícia</li>
+        <li>Estrondo no céu assusta moradores de cidades no interior do Rio; veja vídeo</li>
+        <li>Senado aprova projeto que altera regras penais e gera debate nacional</li>
+        <li>MPT entra com processo contra empresa por irregularidades trabalhistas</li>
+        <li>Investigações sobre crimes na região serrana avançam, afirma polícia</li>
+      </ol>
+    </div>
+
+    <hr>
+
+    <footer>
+      <p><strong>JORNAL DA SERRA</strong> © 2016 - Todos os direitos reservados</p>
+    </footer>
+
+  </div>
+
+</body>
+</html>
